@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>SakuKost - Admin Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="main-layout">
+    <nav class="sidebar">
+        <h3>SakuKost Admin</h3>
+        <ul>
+            <li onclick="showPage('admin-home')">Dashboard</li>
+            <li onclick="showPage('admin-kamar')">Data Kamar</li>
+            <li onclick="showPage('admin-penghuni')">Data Penghuni</li>
+            <li onclick="showPage('admin-pembayaran')">Konfirmasi Bayar</li>
+            <li onclick="showPage('admin-laporan-masuk')">Laporan Fasilitas</li>
+            <li class="logout" onclick="logout()">Keluar</li>
+        </ul>
+    </nav>
+    <main class="content">
+        <div id="admin-home" class="page">
+            <h1>Dashboard Pemilik</h1>
+            <div class="stats-grid">
+                <div class="card"><h4>Total Kamar</h4><p>10</p></div>
+                <div class="card"><h4>Kamar Terisi</h4><p>5</p></div>
+                <div class="card"><h4>Tunggakan</h4><p>1 Orang</p></div>
+            </div>
+        </div>
+        <div id="admin-kamar" class="page" style="display:none;">
+            <h1>Status Ketersediaan Kamar</h1>
+            <table>
+                <tr><th>No Kamar</th><th>Tipe</th><th>Harga</th><th>Status</th></tr>
+                <tr><td>A01</td><td>Reguler</td><td>Rp 800.000</td><td>Terisi</td></tr>
+                <tr><td>A02</td><td>Reguler</td><td>Rp 800.000</td><td>Terisi</td></tr>
+                <tr><td>A03</td><td>Reguler</td><td>Rp 800.000</td><td>Terisi</td></tr>
+                <tr><td>A04</td><td>Reguler</td><td>Rp 800.000</td><td>Terisi</td></tr>
+                <tr><td>A05</td><td>Reguler</td><td>Rp 800.000</td><td>Terisi</td></tr>
+                <tr><td>B01</td><td>VIP</td><td>Rp 1.200.000</td><td>Tersedia</td></tr>
+                <tr><td>B02</td><td>VIP</td><td>Rp 1.200.000</td><td>Tersedia</td></tr>
+                <tr><td>B03</td><td>VIP</td><td>Rp 1.200.000</td><td>Tersedia</td></tr>
+                <tr><td>B04</td><td>VIP</td><td>Rp 1.200.000</td><td>Tersedia</td></tr>
+                <tr><td>B05</td><td>VIP</td><td>Rp 1.200.000</td><td>Tersedia</td></tr>
+            </table>
+        </div>
+        <div id="admin-penghuni" class="page" style="display:none;">
+            <h1>Daftar Penghuni</h1>
+            <table>
+                <tr><th>Nama</th><th>Kamar</th><th>Status Pembayaran</th></tr>
+                <tr><td>Kharisma</td><td>A01</td><td class="status-ok">Lunas</td></tr>
+                <tr><td>Elsy</td><td>A02</td><td class="status-ok">Lunas</td></tr>
+                <tr><td>Jaka</td><td>A03</td><td class="status-ok">Lunas</td></tr>
+                <tr><td>Rafi</td><td>A04</td><td class="status-ok">Lunas</td></tr>
+                <tr><td>Muhammad</td><td>A05</td><td class="status-no">Menunggak</td></tr>
+            </table>
+        </div>
+        <div id="admin-pembayaran" class="page" style="display:none;">
+            <h1>Konfirmasi Pembayaran</h1>
+            <table>
+                <tr><th>Nama</th><th>Bukti</th><th>Aksi</th></tr>
+                <tr>
+                    <td>Muhammad</td>
+                    <td><button class="btn-view">Lihat</button></td>
+                    <td>
+                        <button class="btn-acc" onclick="alert('Diterima')">Setuju</button>
+                        <button class="btn-deny" onclick="alert('Ditolak')">Tolak</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div id="admin-laporan-masuk" class="page" style="display:none;">
+            <h1>Laporan Fasilitas</h1>
+            <table>
+                <tr><th>Pengirim</th><th>Fasilitas</th><th>Deskripsi</th></tr>
+                <tr><td>Elsy</td><td>AC Kamar</td><td>AC tidak dingin sejak semalam.</td></tr>
+            </table>
+        </div>
+    </main>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
